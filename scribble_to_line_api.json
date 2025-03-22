@@ -7,7 +7,7 @@
   },
   "3": {
     "inputs": {
-      "text": "${PROMPT} sharp lines, masterpiece, best quality, very aesthetic, absurdres",
+      "text": "sharp lines, masterpiece, best quality, very aesthetic, absurdres",
       "clip": [
         "86",
         1
@@ -80,21 +80,10 @@
   },
   "14": {
     "inputs": {
-      "image": "diffusion_drawing_temporary_scribble.png",
+      "image": "scribble.png",
       "upload": "image"
     },
     "class_type": "LoadImage"
-  },
-  "15": {
-    "inputs": {
-      "coarse": "disable",
-      "resolution": 512,
-      "image": [
-        "14",
-        0
-      ]
-    },
-    "class_type": "LineArtPreprocessor"
   },
   "17": {
     "inputs": {
@@ -117,7 +106,7 @@
   },
   "37": {
     "inputs": {
-      "seed": 188939767741490,
+      "seed": 767957384681641,
       "steps": 20,
       "cfg": 8,
       "sampler_name": "euler",
@@ -144,7 +133,7 @@
   },
   "42": {
     "inputs": {
-      "image": "diffusion_drawing_temporary_lineart.png",
+      "image": "color.png",
       "upload": "image"
     },
     "class_type": "LoadImage"
@@ -167,58 +156,6 @@
     },
     "class_type": "VAEEncodeForInpaint"
   },
-  "47": {
-    "inputs": {
-      "mask": [
-        "42",
-        1
-      ]
-    },
-    "class_type": "MaskToImage"
-  },
-  "48": {
-    "inputs": {},
-    "class_type": "PreviewImage"
-  },
-  "50": {
-    "inputs": {},
-    "class_type": "PreviewImage"
-  },
-  "51": {
-    "inputs": {},
-    "class_type": "PreviewImage"
-  },
-  "53": {
-    "inputs": {
-      "mask": [
-        "42",
-        1
-      ]
-    },
-    "class_type": "InvertMask"
-  },
-  "54": {
-    "inputs": {
-      "mask": [
-        "53",
-        0
-      ]
-    },
-    "class_type": "MaskToImage"
-  },
-  "55": {
-    "inputs": {},
-    "class_type": "PreviewImage"
-  },
-  "57": {
-    "inputs": {
-      "image": [
-        "14",
-        0
-      ]
-    },
-    "class_type": "ImageInvert"
-  },
   "59": {
     "inputs": {
       "control_net_name": "mistoline_v10.safetensors",
@@ -238,19 +175,9 @@
     },
     "class_type": "DiffusionDrawingScribblePreprocess"
   },
-  "67": {
-    "inputs": {
-      "control_net_name": "controlnet852A_normal.safetensors",
-      "model": [
-        "86",
-        0
-      ]
-    },
-    "class_type": "DiffControlNetLoader"
-  },
   "69": {
     "inputs": {
-      "seed": "${RANDOM_SEED}",
+      "seed": 291986379685470,
       "steps": 20,
       "cfg": 8,
       "sampler_name": "euler",
@@ -274,91 +201,6 @@
       ]
     },
     "class_type": "KSampler"
-  },
-  "70": {
-    "inputs": {
-      "samples": [
-        "37",
-        0
-      ],
-      "vae": [
-        "11",
-        0
-      ]
-    },
-    "class_type": "VAEDecode"
-  },
-  "71": {
-    "inputs": {},
-    "class_type": "PreviewImage"
-  },
-  "72": {
-    "inputs": {
-      "coarse": "disable",
-      "resolution": 1024
-    },
-    "class_type": "LineArtPreprocessor"
-  },
-  "73": {
-    "inputs": {
-      "guassian_sigma": 2,
-      "intensity_threshold": 8,
-      "resolution": 1024
-    },
-    "class_type": "LineartStandardPreprocessor"
-  },
-  "74": {
-    "inputs": {
-      "merge_with_lineart": "lineart_standard",
-      "resolution": 1024,
-      "lineart_lower_bound": 0,
-      "lineart_upper_bound": 1,
-      "object_min_size": 36,
-      "object_connectivity": 1
-    },
-    "class_type": "AnyLineArtPreprocessor_aux"
-  },
-  "75": {
-    "inputs": {
-      "resolution": 1024
-    },
-    "class_type": "Manga2Anime_LineArt_Preprocessor"
-  },
-  "76": {
-    "inputs": {
-      "image": [
-        "72",
-        0
-      ]
-    },
-    "class_type": "ImageInvert"
-  },
-  "77": {
-    "inputs": {
-      "image": [
-        "73",
-        0
-      ]
-    },
-    "class_type": "ImageInvert"
-  },
-  "78": {
-    "inputs": {
-      "image": [
-        "74",
-        0
-      ]
-    },
-    "class_type": "ImageInvert"
-  },
-  "79": {
-    "inputs": {
-      "image": [
-        "75",
-        0
-      ]
-    },
-    "class_type": "ImageInvert"
   },
   "86": {
     "inputs": {
