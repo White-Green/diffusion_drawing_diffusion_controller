@@ -80,7 +80,7 @@
   },
   "14": {
     "inputs": {
-      "image": "scribble.png",
+      "image": "diffusion_drawing_temporary_scribble.png",
       "upload": "image"
     },
     "class_type": "LoadImage"
@@ -133,7 +133,7 @@
   },
   "42": {
     "inputs": {
-      "image": "color.png",
+      "image": "diffusion_drawing_temporary_lineart.png",
       "upload": "image"
     },
     "class_type": "LoadImage"
