@@ -1,0 +1,638 @@
+{
+  "1": {
+    "inputs": {
+      "image": "diffusion_drawing_temporary_basecolor_image.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage"
+  },
+  "3": {
+    "inputs": {
+      "seed": "${RANDOM_SEED}",
+      "steps": 10,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 0.5,
+      "model": [
+        "5",
+        0
+      ],
+      "positive": [
+        "9",
+        0
+      ],
+      "negative": [
+        "8",
+        0
+      ],
+      "latent_image": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "KSampler"
+  },
+  "5": {
+    "inputs": {
+      "ckpt_name": "animagineXLV31_v31.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple"
+  },
+  "6": {
+    "inputs": {
+      "vae_name": "Animagine_xl_3_1_vae.safetensors"
+    },
+    "class_type": "VAELoader"
+  },
+  "8": {
+    "inputs": {
+      "text": "monochrome, sketch, blurred, soft edge, bokeh, wrong, ugly, bad feet, bad hands, bad art, ugly artstyle, bad anatomy, bad fingers, censor, censored, ugly, deformed, noisy, blurry, low contrast, photo, realistic ,watermark, username, text",
+      "clip": [
+        "5",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode"
+  },
+  "9": {
+    "inputs": {
+      "text": "masterpiece, best quality, very aesthetic",
+      "clip": [
+        "5",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode"
+  },
+  "15": {
+    "inputs": {
+      "pixels": [
+        "73",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "VAEEncode"
+  },
+  "20": {
+    "inputs": {
+      "samples": [
+        "15",
+        0
+      ],
+      "mask": [
+        "35",
+        0
+      ]
+    },
+    "class_type": "SetLatentNoiseMask"
+  },
+  "27": {
+    "inputs": {
+      "image": "diffusion_drawing_temporary_lineart.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage"
+  },
+  "28": {
+    "inputs": {
+      "image": "diffusion_drawing_temporary_basecolor.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage"
+  },
+  "34": {
+    "inputs": {
+      "expand": -2,
+      "tapered_corners": true,
+      "mask": [
+        "27",
+        1
+      ]
+    },
+    "class_type": "GrowMask"
+  },
+  "35": {
+    "inputs": {
+      "value": 0.99,
+      "mask": [
+        "34",
+        0
+      ]
+    },
+    "class_type": "ThresholdMask"
+  },
+  "49": {
+    "inputs": {
+      "seed": "${RANDOM_SEED}",
+      "steps": 10,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 0.4,
+      "model": [
+        "5",
+        0
+      ],
+      "positive": [
+        "9",
+        0
+      ],
+      "negative": [
+        "8",
+        0
+      ],
+      "latent_image": [
+        "88",
+        0
+      ]
+    },
+    "class_type": "KSampler"
+  },
+  "50": {
+    "inputs": {
+      "seed": "${RANDOM_SEED}",
+      "steps": 10,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 0.4,
+      "model": [
+        "5",
+        0
+      ],
+      "positive": [
+        "9",
+        0
+      ],
+      "negative": [
+        "8",
+        0
+      ],
+      "latent_image": [
+        "92",
+        0
+      ]
+    },
+    "class_type": "KSampler"
+  },
+  "51": {
+    "inputs": {
+      "seed": "${RANDOM_SEED}",
+      "steps": 10,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 0.4,
+      "model": [
+        "5",
+        0
+      ],
+      "positive": [
+        "9",
+        0
+      ],
+      "negative": [
+        "8",
+        0
+      ],
+      "latent_image": [
+        "98",
+        0
+      ]
+    },
+    "class_type": "KSampler"
+  },
+  "52": {
+    "inputs": {
+      "seed": "${RANDOM_SEED}",
+      "steps": 10,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 0.3,
+      "model": [
+        "5",
+        0
+      ],
+      "positive": [
+        "9",
+        0
+      ],
+      "negative": [
+        "8",
+        0
+      ],
+      "latent_image": [
+        "103",
+        0
+      ]
+    },
+    "class_type": "KSampler"
+  },
+  "62": {
+    "inputs": {
+      "samples": [
+        "52",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "VAEDecode"
+  },
+  "64": {
+    "inputs": {
+      "base_colored": [
+        "68",
+        0
+      ],
+      "shadow_applied": [
+        "115",
+        0
+      ],
+      "color_mask": [
+        "71",
+        0
+      ]
+    },
+    "class_type": "DiffusionDrawingExtractShadow"
+  },
+  "65": {
+    "inputs": {
+      "images": [
+        "64",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "66": {
+    "inputs": {
+      "base_colored": [
+        "68",
+        0
+      ],
+      "light_applied": [
+        "115",
+        0
+      ],
+      "color_mask": [
+        "72",
+        0
+      ]
+    },
+    "class_type": "DiffusionDrawingExtractLight"
+  },
+  "67": {
+    "inputs": {
+      "images": [
+        "66",
+        0
+      ]
+    },
+    "class_type": "PreviewImage"
+  },
+  "68": {
+    "inputs": {
+      "image": "diffusion_drawing_temporary_image.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage"
+  },
+  "69": {
+    "inputs": {
+      "image": "diffusion_drawing_temporary_shadow.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage"
+  },
+  "70": {
+    "inputs": {
+      "image": "diffusion_drawing_temporary_light.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage"
+  },
+  "71": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "operation": "or",
+      "destination": [
+        "28",
+        1
+      ],
+      "source": [
+        "108",
+        0
+      ]
+    },
+    "class_type": "MaskComposite"
+  },
+  "72": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "operation": "or",
+      "destination": [
+        "28",
+        1
+      ],
+      "source": [
+        "109",
+        0
+      ]
+    },
+    "class_type": "MaskComposite"
+  },
+  "73": {
+    "inputs": {
+      "base_image": [
+        "1",
+        0
+      ],
+      "color_mask": [
+        "28",
+        1
+      ]
+    },
+    "class_type": "DiffusionDrawingFakeShadow"
+  },
+  "75": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "VAEDecode"
+  },
+  "77": {
+    "inputs": {
+      "samples": [
+        "49",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "VAEDecode"
+  },
+  "85": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "destination": [
+        "75",
+        0
+      ],
+      "source": [
+        "1",
+        0
+      ],
+      "mask": [
+        "89",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked"
+  },
+  "86": {
+    "inputs": {
+      "pixels": [
+        "85",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "VAEEncode"
+  },
+  "88": {
+    "inputs": {
+      "samples": [
+        "86",
+        0
+      ],
+      "mask": [
+        "35",
+        0
+      ]
+    },
+    "class_type": "SetLatentNoiseMask"
+  },
+  "89": {
+    "inputs": {
+      "mask": [
+        "35",
+        0
+      ]
+    },
+    "class_type": "InvertMask"
+  },
+  "90": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "destination": [
+        "77",
+        0
+      ],
+      "source": [
+        "1",
+        0
+      ],
+      "mask": [
+        "89",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked"
+  },
+  "91": {
+    "inputs": {
+      "pixels": [
+        "90",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "VAEEncode"
+  },
+  "92": {
+    "inputs": {
+      "samples": [
+        "91",
+        0
+      ],
+      "mask": [
+        "35",
+        0
+      ]
+    },
+    "class_type": "SetLatentNoiseMask"
+  },
+  "94": {
+    "inputs": {
+      "samples": [
+        "50",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "VAEDecode"
+  },
+  "96": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "destination": [
+        "94",
+        0
+      ],
+      "source": [
+        "1",
+        0
+      ],
+      "mask": [
+        "89",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked"
+  },
+  "97": {
+    "inputs": {
+      "pixels": [
+        "96",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "VAEEncode"
+  },
+  "98": {
+    "inputs": {
+      "samples": [
+        "97",
+        0
+      ],
+      "mask": [
+        "35",
+        0
+      ]
+    },
+    "class_type": "SetLatentNoiseMask"
+  },
+  "100": {
+    "inputs": {
+      "samples": [
+        "51",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "VAEDecode"
+  },
+  "102": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "destination": [
+        "100",
+        0
+      ],
+      "source": [
+        "1",
+        0
+      ],
+      "mask": [
+        "89",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked"
+  },
+  "103": {
+    "inputs": {
+      "pixels": [
+        "102",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "VAEEncode"
+  },
+  "108": {
+    "inputs": {
+      "mask": [
+        "69",
+        1
+      ]
+    },
+    "class_type": "InvertMask"
+  },
+  "109": {
+    "inputs": {
+      "mask": [
+        "70",
+        1
+      ]
+    },
+    "class_type": "InvertMask"
+  },
+  "115": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "destination": [
+        "62",
+        0
+      ],
+      "source": [
+        "1",
+        0
+      ],
+      "mask": [
+        "89",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked"
+  }
+}
